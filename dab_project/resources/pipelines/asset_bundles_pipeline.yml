@@ -1,0 +1,15 @@
+resources:
+  pipelines:
+    pipeline_asset_bundles_pipeline:
+      name: asset_bundles_pipeline
+      libraries:
+        - glob:
+            include: ../../src/pipelines/asset_bundles_pipeline/transformations/** # Transformations Folder
+      schema: ${var.schema}
+      continuous: false
+      development: false
+      photon: true
+      channel: CURRENT
+      catalog: ${var.catalog}
+      serverless: true
+      root_path: ../../src/pipelines/asset_bundles_pipeline  # Pipeline Folder Name
